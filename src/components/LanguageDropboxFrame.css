@@ -1,0 +1,40 @@
+.flagicongb {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+.languageselectframegb {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  align-self: stretch;
+  height: 60px;
+  flex-direction: row;
+}
+.languagedropboxframe,
+.languageselectframegb,
+.languageselectframelt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.languageselectframelt {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  align-self: stretch;
+  flex: 1;
+  flex-direction: row;
+}
+.languagedropboxframe {
+  position: relative;
+  background-color: var(--color-gray);
+  height: 120px;
+  overflow: hidden;
+  flex-direction: column;
+  max-width: 100%;
+  max-height: 100%;
+}

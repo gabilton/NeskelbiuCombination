@@ -1,0 +1,67 @@
+.addnewaddbuttonnametext {
+  position: absolute;
+  top: -4px;
+  left: 0;
+  font-size: var(--font-size-mini);
+  font-family: var(--font-mina);
+  color: var(--color-black);
+  text-align: left;
+}
+.addnewaddbutton {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: var(--color-orchid);
+  position: relative;
+  border-radius: var(--br-8xs);
+  width: 120px;
+  height: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.loginbuttonnametext {
+  position: absolute;
+  top: -4px;
+  left: 9px;
+  font-size: var(--font-size-mini);
+  font-family: var(--font-mina);
+  color: var(--color-black);
+  text-align: left;
+}
+.loginbutton {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: var(--color-orchid);
+  position: relative;
+  border-radius: var(--br-8xs);
+  width: 80px;
+  height: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.loginregaddframe {
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-5xs);
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-base);
+}
+/* LOGIN/REGISTER BUTTON DIV TAKEN DOWN 20px */
+/* .loginButtons {
+  transform: translateY(20px);
+}
+.loginButtons {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: var(--color-orchid);
+  position: relative;
+  border-radius: var(--br-8xs);
+  width: 120px;
+  height: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+} */

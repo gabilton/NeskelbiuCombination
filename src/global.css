@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Mina:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,800;1,300;1,500;1,800&display=swap");
+body {
+  margin: 0;
+  line-height: normal;
+}
+:root {
+  /* fonts */
+  --font-mina: Mina;
+  --font-inter: Inter;
+
+  /* font sizes */
+  --font-size-mini: 15px;
+  --font-size-sm: 14px;
+  --font-size-xs: 12px;
+  --font-size-base: 16px;
+  --font-size-xl: 20px;
+  --font-size-5xl: 24px;
+
+  /* Colors */
+  --color-white: #fff;
+  --color-gray: rgba(255, 255, 255, 0);
+  --color-cadetblue-100: #54a6b8;
+  --color-cadetblue-200: #2893ab;
+  --color-snow: #faf2f2;
+  --color-black: #000;
+  --color-orchid: #d47ce3;
+  --color-limegreen: rgba(78, 215, 29, 0.15);
+
+  /* Gaps */
+  --gap-3xs: 10px;
+  --gap-24xl: 43px;
+  --gap-xl: 20px;
+  --gap-smi: 13px;
+  --gap-6xs: 7px;
+  --gap-base: 16px;
+  --gap-7xs: 6px;
+
+  /* Paddings */
+  --padding-3xs: 10px;
+  --padding-base: 16px;
+  --padding-5xs: 8px;
+  --padding-13xl: 32px;
+
+  /* border radiuses */
+  --br-8xs: 5px;
+  --br-xs: 12px;
+}

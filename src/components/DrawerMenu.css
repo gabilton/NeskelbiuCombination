@@ -1,0 +1,72 @@
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.kalba {
+  position: relative;
+}
+.drawerlanguagebuttonframe {
+  top: 283px;
+  padding: 0 var(--padding-base);
+}
+.draweraddnewaddbuttonframe,
+.drawerfavoritesbuttonframe,
+.drawerhistorybuttonframe,
+.drawerlanguagebuttonframe,
+.drawerloginbuttonframe,
+.drawerregbuttonframe {
+  position: absolute;
+  left: 8px;
+  border-radius: var(--br-8xs);
+  background-color: var(--color-orchid);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.drawerhistorybuttonframe {
+  top: 228px;
+  padding: 0 var(--padding-base);
+}
+.draweraddnewaddbuttonframe,
+.drawerfavoritesbuttonframe,
+.drawerloginbuttonframe,
+.drawerregbuttonframe {
+  top: 173px;
+}
+.draweraddnewaddbuttonframe,
+.drawerloginbuttonframe,
+.drawerregbuttonframe {
+  top: 118px;
+}
+.drawerloginbuttonframe,
+.drawerregbuttonframe {
+  top: 63px;
+}
+.drawerloginbuttonframe {
+  top: 8px;
+  padding: 0 4px;
+}
+.drawer-menu {
+  position: relative;
+  background-color: var(--color-white);
+  width: 261px;
+  height: 100%;
+  overflow: hidden;
+  opacity: 0;
+  max-width: 90%;
+  text-align: left;
+  font-size: var(--font-size-mini);
+  color: var(--color-black);
+  font-family: var(--font-mina);
+}
+.drawer-menu.animate {
+  animation: 0.25s ease 0s 1 normal forwards slide-in-left;
+}

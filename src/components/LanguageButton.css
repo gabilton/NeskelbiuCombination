@@ -1,0 +1,17 @@
+.languageicon {
+  position: relative;
+  width: 32px;
+  height: 32px;
+}
+.languagebutton {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}

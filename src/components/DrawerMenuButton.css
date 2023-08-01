@@ -1,0 +1,41 @@
+.line {
+  position: relative;
+  border-radius: var(--br-8xs);
+  background-color: var(--color-orchid);
+  width: 24px;
+  height: 2px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.drawermenu-button {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-5xs);
+  background-color: transparent;
+  margin: 0 !important;
+  position: absolute;
+  top: 7px;
+  left: 0;
+  overflow: hidden;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-7xs);
+  z-index: 1;
+}
+@media screen and (max-width: 1050px) {
+  .drawermenu-button {
+    display: flex;
+    flex: 1;
+  }
+}
+@media screen and (max-width: 590px) {
+  .drawermenu-button {
+    align-self: stretch;
+    width: auto;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+  }
+}

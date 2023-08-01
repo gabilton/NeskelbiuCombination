@@ -1,0 +1,49 @@
+.loginnameinput,
+.loginpasswordinput {
+  border: 0;
+  background-color: var(--color-white);
+  align-self: stretch;
+  overflow: hidden;
+}
+.loginnameinput {
+  border-radius: 10px;
+}
+.loginpasswordinput {
+  border-radius: var(--br-8xs);
+}
+.submitloginbuttonnametext {
+  position: relative;
+  font-size: var(--font-size-mini);
+  font-family: var(--font-mina);
+  color: var(--color-white);
+  text-align: left;
+}
+.loginframe,
+.submitloginbuttonframe {
+  border-radius: var(--br-8xs);
+  overflow: hidden;
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+.submitloginbuttonframe {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-3xs);
+  background-color: #3569b7;
+  align-self: stretch;
+  height: 30px;
+  flex-shrink: 0;
+  flex-direction: row;
+}
+.loginframe {
+  position: relative;
+  background-color: #95208a;
+  height: 214px;
+  flex-direction: column;
+  padding: 34px 71px;
+  gap: 28px;
+  max-width: 100%;
+  max-height: 100%;
+}

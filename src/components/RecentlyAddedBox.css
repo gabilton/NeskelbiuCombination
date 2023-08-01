@@ -1,0 +1,92 @@
+.recentlyaddedthumbnailtext {
+  position: relative;
+  font-size: var(--font-size-xl);
+  line-height: 30px;
+  font-weight: 800;
+  color: var(--color-white);
+  text-align: center;
+}
+.recentlyaddedcardpicture1-icon {
+  align-self: stretch;
+  position: relative;
+  max-height: 100%;
+  width: 166px;
+  object-fit: cover;
+}
+.recentlyaddeddescription1 {
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  line-height: 30px;
+  font-weight: 300;
+}
+.recentlyaddeddescriptionframe1 {
+  align-self: stretch;
+  flex: 1;
+  background-color: var(--color-snow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.recentlyaddedtown1 {
+  position: relative;
+  line-height: 30px;
+  font-weight: 300;
+}
+.recentlyaddedtownframe1 {
+  background-color: var(--color-snow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.recentlyaddedcard1,
+.recentlyaddedcarddescriptionan {
+  align-self: stretch;
+  display: flex;
+  justify-content: flex-start;
+}
+.recentlyaddedcarddescriptionan {
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.recentlyaddedcard1 {
+  background-color: var(--color-white);
+  height: 110px;
+  overflow: hidden;
+  flex-shrink: 0;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--gap-6xs);
+}
+.recentlyaddeddescription2 {
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  line-height: 30px;
+  font-weight: 300;
+}
+.recentlyaddedbox {
+  align-self: stretch;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 0 var(--padding-5xs);
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-xl);
+  text-align: left;
+  font-size: var(--font-size-sm);
+  color: var(--color-black);
+  font-family: var(--font-inter);
+}
+@media screen and (max-width: 590px) {
+  .recentlyaddeddescription1 {
+    line-height: 30px;
+    text-align: left;
+  }
+}

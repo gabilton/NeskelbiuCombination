@@ -1,0 +1,44 @@
+.favoritesicon {
+  position: absolute;
+  height: 81.24%;
+  width: 96.43%;
+  top: 9.38%;
+  right: 1.79%;
+  bottom: 9.38%;
+  left: 1.78%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.favoritesbutton {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: relative;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.historyicon {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.favoritesandhistoyframe {
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-5xs);
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-base);
+}

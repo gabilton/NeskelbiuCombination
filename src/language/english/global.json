@@ -1,0 +1,14 @@
+{
+    "header":{
+        "message": "welcome in english language"
+    },
+    "home":{
+        "body": "A second hand store for all your computer needs"
+    },
+
+    "Login":{
+        "loginButton": "Sign In"
+    }
+
+
+}

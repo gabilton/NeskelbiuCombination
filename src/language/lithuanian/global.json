@@ -1,0 +1,15 @@
+{
+    "header":{
+        "message": "sveiki lietuviu kalba"
+    },
+    "home":{
+        "body": "antru ranku parduotuve kompiuteriams ir viskam susijusiam su jais"
+    },
+
+    "Login":{
+        "loginButton": "Prisijungti"
+    }
+
+
+
+}

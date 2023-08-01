@@ -1,0 +1,23 @@
+.filterdropboxframe,
+.townselectionframe {
+  border-radius: var(--br-8xs);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.townselectionframe {
+  background-color: var(--color-white);
+  padding: 0 var(--padding-3xs);
+  gap: var(--gap-3xs);
+}
+.filterdropboxframe {
+  position: relative;
+  background-color: #d45454;
+  padding: 0 15px;
+  box-sizing: border-box;
+  gap: 44px;
+  max-width: 100%;
+  max-height: 100%;
+}
