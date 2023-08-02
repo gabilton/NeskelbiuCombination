@@ -1,4 +1,4 @@
-import NavBar from "../components/NavBar";
+import NavBar from "../components/Navbar/NavBar";
 import CardFullColumnFrame from "../components/CardFullColumnFrame";
 import FooterFrame from "../components/FooterFrame";
 import "./Kolkasveikia.css";

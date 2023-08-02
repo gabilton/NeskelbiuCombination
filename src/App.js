@@ -16,10 +16,12 @@ import Home from './components/Home';
 import Lounge from './testing/Lounge';
 import Admin from './testing/Admin';
 import Editor from './testing/Editor';
-import NavBar from "./components/NavBar";
+import NavBar from "./components/Navbar/NavBar";
 import FooterFrame from "./components/FooterFrame";
 import GetPosterList from "./posters/GetPosterList";
 import GetPosterInfo from "./posters/GetPosterInfo";
+import CreatePosters from "./posters/CreatePosters";
+
 
 function App() {
   const action = useNavigationType();
@@ -74,14 +76,16 @@ return (
         <Route path="/register" element={<Register/>}/>
         <Route path="/unauthorized" element={<Unauthorized />} />
         <Route path="/posters" element={<GetPosterList />} />
-        <Route path="/poster/:id" element={<GetPosterInfo/>} />
+        <Route path="/poster/:id" element={<GetPosterInfo />} />
 
         {/* We wat to protect these routes */}
           <Route path="/home" element={<Home/>}/>
-        
+
         <Route element={<RequireAuth allowedRoles={['ADMIN', 'MANAGER', 'USER']}/>}>
           <Route path="/lounge" element={<Lounge/>}/>
+          <Route path="/create" element={<CreatePosters/>}/>
         </Route>
+        
 
         <Route element={<RequireAuth allowedRoles={['ADMIN']}/>}>
           <Route path="/admin" element={<Admin/>}/>

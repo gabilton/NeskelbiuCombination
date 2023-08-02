@@ -4,7 +4,7 @@ import Search from "./Search";
 import FavoritesAndHistoyFrame from "./FavoritesAndHistoyFrame";
 import LoginRegAddFrame from "./LoginRegAddFrame";
 import LanguageButton from "./LanguageButton";
-import HandleChangeLanguage from '../hooks/HandleChangeLanguage';
+import HandleChangeLanguage from '../../hooks/HandleChangeLanguage';
 import "./NavBar.css";
 const NavBar = () => {
   return (

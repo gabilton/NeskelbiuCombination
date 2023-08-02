@@ -6,9 +6,38 @@
         "body": "A second hand store for all your computer needs"
     },
 
-    "Login":{
-        "loginButton": "Sign In"
+    "navbarButtons": {
+        "loginButton": "Login",
+        "signUpButton": "Sign Up",
+        "myProfileButton": "My Profile",
+        "logOutButton": "Log Out",
+        "newPostButton": "New Post",
+        "filterButton": "Filter"
+        },
+        
+    "categoryA": {
+        "computerStuff": "Computers",
+        "genericTechnologies": "Technology"
+    },
+    "computerCategoryB": {
+        "computers": "Computers",
+        "externalDevices": "External Devices",
+        "computerComponents": "Computer Components",
+        "accessories": "Accessories",
+        "softwareAndGames": "Software and Games",
+        "networkStuff": "Network Equipment",
+        "services": "Services, Repairs",
+        "other": "Other"
+    },
+    "genTechCategoryB": {
+        "audio": "Audio Equipment",
+        "foto": "Photo, Optical Equipment",
+        "officeStuff": "Office, Commercial Equipment",
+        "gardening": "Gardening Equipment",
+        "industrialEquipment": "Industrial Equipment",
+        "technicalServices": "Services, Repairs",
+        "other": "Other"
     }
-
-
+    
+      
 }

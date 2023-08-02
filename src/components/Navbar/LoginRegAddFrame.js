@@ -3,7 +3,7 @@ import LoginFrame from "./LoginFrame";
 import PortalPopup from "./PortalPopup";
 import "./LoginRegAddFrame.css";
 import { Link } from 'react-router-dom';
-import  useAuth  from '../hooks/useAuth';
+import  useAuth  from '../../hooks/useAuth';
 import { useTranslation } from "react-i18next";
 
 
@@ -37,7 +37,7 @@ const LoginRegAddFrame = () => {
           !auth?.auth?.user ? ( 
             
             <>
-              <Link className="loginbutton" onClick={openLoginFramePopup} to="/login" >
+              <Link className="loginbutton" to="/login" >
                   <b className="loginbuttonnametext">{t("navbarButtons.loginButton")}</b>
               </Link>
 

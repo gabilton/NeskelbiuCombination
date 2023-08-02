@@ -13,7 +13,50 @@
         "logOutButton": "Atsijungti",
         "newPostButton": "Naujas skelbimas",
         "filterButton" : "Filtras"
+    },
+    "categoryA":{
+        "computerStuff":"Kompiuterija",
+        "genericTechnologies": "Technika"
+    },
+    "computerCategoryB":{
+        "0": "Kompiuteriai",
+        "1": "Išoriniai įrenginiai",
+        "2": "Kompiuterių komponentai",
+        "3": "priedai, aksesuarai",
+        "4": "Programinė įranga, žaidimai",
+        "5": "Tinklo įranga",
+        "6": "Paslaugos, remontas",
+        "7": "Kita"
+    },
+    "genTechCategoryB":{
+        "0": "Garso įranga",
+        "1": "Video įranga",
+        "2": "Foto, optinė įranga",
+        "3": "Buitine technika",
+        "4": "Biuro, prekybinė technika",
+        "5": "Sodui, daržui, miškui",
+        "6": "Pramoninė tecnhika",
+        "7": "Paslaugos, remontas",
+        "8": "Kita"
+    },
+    "createPosterPage":{
+        "addNewPoster": "Prideti naują skelbimą",
+        "posterTitle": "Skelbimo pavadinimas:",
+        "posterDescription": "Prekės/paslaugos apibūdinimas",
+        "posterPrice":"Įrašykite prekės kainą (eur): ",
+        "categoryAName":"Pirmine prekes kategorija",
+        "categoryBName": "Antrine prekes kategorija",
+        "defaultChoicePText": "Pasirinkte kategorija",
+        "phoneNumber": "Kontaktinis numeris: ",
+        "city": "Iš kur pardavinėjama prekė: ",
+        "otherCity": "Įrašykite vietovę: ",
+        "website": "Internetinė nuoroda į prekės tinklalapį (jei toks yra):",
+        "videoLink": "Nuoroda į vaizdinę medžiagą (jei tokia yra):",
+        "imgUploadMessage": "Nuotraukas šiuo metu galima įkelti tik vėliau. Atsiprašome už nesklandumus",
+        "submitButton":"Įkelti skelbimą!"
+
     }
+
 
 
 

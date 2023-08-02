@@ -1,12 +1,12 @@
 import RecentlyAddedBox from "./RecentlyAddedBox";
-import CategoryFrame1 from "./CategoryFrame1";
-import CategoryFrame2 from "./CategoryFrame2";
-import CategoryFrame3 from "./CategoryFrame3";
-import CategoryFrame4 from "./CategoryFrame4";
-import CategoryFrame5 from "./CategoryFrame5";
-import CategoryFrame6 from "./CategoryFrame6";
-import CategoryFrame7 from "./CategoryFrame7";
-import CategoryFrame8 from "./CategoryFrame8";
+import CategoryFrame1 from "./CategoryFrames/CategoryFrame1";
+import CategoryFrame2 from "./CategoryFrames/CategoryFrame2";
+import CategoryFrame3 from "./CategoryFrames/CategoryFrame3";
+import CategoryFrame4 from "./CategoryFrames/CategoryFrame4";
+import CategoryFrame5 from "./CategoryFrames/CategoryFrame5";
+import CategoryFrame6 from "./CategoryFrames/CategoryFrame6";
+import CategoryFrame7 from "./CategoryFrames/CategoryFrame7";
+import CategoryFrame8 from "./CategoryFrames/CategoryFrame8";
 import "./CardFullColumnFrame.css";
 const CardFullColumnFrame = () => {
   return (
