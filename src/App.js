@@ -3,7 +3,7 @@ import {
   Routes,
   Route,
   useNavigationType,
-  useLocation,
+  useLocation
 } from "react-router-dom";
 import Kolkasveikia from "./pages/Kolkasveikia";
 import { useEffect } from "react";
@@ -19,6 +19,7 @@ import Editor from './testing/Editor';
 import NavBar from "./components/NavBar";
 import FooterFrame from "./components/FooterFrame";
 import GetPosterList from "./posters/GetPosterList";
+import GetPosterInfo from "./posters/GetPosterInfo";
 
 function App() {
   const action = useNavigationType();
@@ -58,6 +59,8 @@ function App() {
   }, [pathname]);
 
 
+  // POSTER INFO ROUTE 
+  const posterInfoPath = "/poster/get/:id";
 
 
 return (
@@ -71,6 +74,7 @@ return (
         <Route path="/register" element={<Register/>}/>
         <Route path="/unauthorized" element={<Unauthorized />} />
         <Route path="/posters" element={<GetPosterList />} />
+        <Route path="/poster/:id" element={<GetPosterInfo/>} />
 
         {/* We wat to protect these routes */}
           <Route path="/home" element={<Home/>}/>

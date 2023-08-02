@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import AxiosFetch from '../hooks/AxiosFetch';
 
 const posterListURL = "api/v1/poster/get/all";
@@ -7,7 +7,8 @@ const GetPosterList = () => {
     
     const [posts, isPending, error ] = AxiosFetch(posterListURL);
 
-
+    const { what } = useParams();
+    console.log(what)
   return (
     <div style={{color:'black'}}>
         {console.log(posts)}
@@ -16,9 +17,9 @@ const GetPosterList = () => {
         { isPending && <p style={{color:'black'}} >Loading...</p> }
         { posts && posts.map((post) => (
             <div style={{color:'black'}} className='allPostersList' key={post.posterId}>  
-                <Link to={'api/v1/poster/get/'+post.posterId}>
+                <Link to={'/poster/'+post.posterId}>
                     <h2>{post.postName}</h2>
-                    <p>Ikele: {post.username}</p>
+                    <p> Ikele: {post.username}</p>
                     <p> Kaina: {post.price} </p>
                     <img src={post.images[0]} alt="Img not available"/>
                     { 
