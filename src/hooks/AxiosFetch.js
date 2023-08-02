@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from '../api/axios';
 import { useEffect, useState } from 'react';
 
 const AxiosFetch = (url) => {
@@ -11,7 +11,7 @@ const AxiosFetch = (url) => {
             try{
                 const response = await axios.get(url);
                 setData(response.data);
-                console.log(response.data);
+                console.log(response);
                 setIsPending(false);
             } catch (error){
                 error.message = "Connection to the server failed";
@@ -21,7 +21,7 @@ const AxiosFetch = (url) => {
         }
         pavadinimas();
     },[url]);
-    console.log(data, isPending, error);
+    console.log("stuff from AxiosFetch.js" + data, isPending, error);
     return [ data, isPending, error ];
 }
  

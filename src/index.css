@@ -22,7 +22,7 @@ input {
 html {
     font-family: 'Nunito', sans-serif;
     font-size: 15px;
-    color: #fff;
+    color: #ffffff;
 }
 
 /* body {
@@ -59,7 +59,7 @@ form {
 }
 
 a, a:visited {
-    color: #f1f1f1;
+    color: #080808;
     text-decoration: none;
 }
 

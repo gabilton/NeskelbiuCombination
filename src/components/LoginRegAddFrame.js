@@ -27,35 +27,36 @@ const LoginRegAddFrame = () => {
       <div className="loginregaddframe">
        
         <Link className="addnewaddbutton" to="/create" >
-        <b className="addnewaddbuttonnametext">Naujas skelbimas</b>
+        <b className="addnewaddbuttonnametext">{t("navbarButtons.newPostButton")}</b>
         </Link>
 
 
-        { console.log(auth) }
+        {/* { console.log(auth.auth) } */}
+        {/* { console.log(auth) } */}
         { 
-          !auth?.user ? ( 
+          !auth?.auth?.user ? ( 
             
             <>
               <Link className="loginbutton" onClick={openLoginFramePopup} to="/login" >
-                  <b className="loginbuttonnametext">{t("Login.loginButton")}</b>
+                  <b className="loginbuttonnametext">{t("navbarButtons.loginButton")}</b>
               </Link>
 
               <Link className="loginbutton" to="/register" >
-                <b className="addnewaddbuttonnametext">Registracija</b>
+                <b className="addnewaddbuttonnametext">{t("navbarButtons.signUpButton")}</b>
               </Link>
             </>
              
-           ) : (
-                <>
-                  <Link className="loginbutton" onClick={openLoginFramePopup} to="/login" >
-                      {/* <b className="loginbuttonnametext">{auth.user}</b> */}
-                      <b className="loginbuttonnametext">Paskyra</b>
-                  </Link>
+          ) : (
+            <>
+              <Link className="loginbutton" onClick={openLoginFramePopup} to="/login" >
+                  {/* <b className="loginbuttonnametext">{auth.user}</b> */}
+                  <b className="loginbuttonnametext">{t("navbarButtons.myProfileButton")}</b>
+              </Link>
 
-                  <Link className="loginbutton" to="/register" >
-                    <b className="addnewaddbuttonnametext">Atsijungti</b>
-                  </Link>
-                </>
+              <Link className="loginbutton" to="/register" >
+                <b className="addnewaddbuttonnametext">{t("navbarButtons.logOutButton")}</b>
+              </Link>
+            </>
             ) 
           } 
       </div>

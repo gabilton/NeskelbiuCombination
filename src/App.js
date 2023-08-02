@@ -18,6 +18,7 @@ import Admin from './testing/Admin';
 import Editor from './testing/Editor';
 import NavBar from "./components/NavBar";
 import FooterFrame from "./components/FooterFrame";
+import GetPosterList from "./posters/GetPosterList";
 
 function App() {
   const action = useNavigationType();
@@ -39,6 +40,7 @@ function App() {
         title = "";
         metaDescription = "";
         break;
+        default: break;
     }
 
     if (title) {
@@ -68,6 +70,7 @@ return (
         <Route path="/login" element={<Login/>}/>
         <Route path="/register" element={<Register/>}/>
         <Route path="/unauthorized" element={<Unauthorized />} />
+        <Route path="/posters" element={<GetPosterList />} />
 
         {/* We wat to protect these routes */}
           <Route path="/home" element={<Home/>}/>

@@ -21,7 +21,7 @@ const Users = () => {
                         signal: controller.signal
                     }
                 );
-                console.log(response.data);
+                // console.log(response.data);
                 isMounted && setUsers(response.data);
             } catch (err) {
                 console.error(err);

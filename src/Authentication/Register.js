@@ -52,15 +52,15 @@ function Register() {
 
     useEffect(() => {
         const result = USER_REGEX.test(user);
-        console.log(result);
-        console.log(user);
+        // console.log(result);
+        // console.log(user);
         setValidName(result);
     }, [user]);
 
     useEffect(() => {
         const result = PWD_REGEX.test(pwd);
-        console.log(result);
-        console.log(pwd);
+        // console.log(result);
+        // console.log(pwd);
         setValidPwd(result);
         const match = pwd === matchPwd;
         setValidMatch(match);
@@ -68,22 +68,22 @@ function Register() {
 
     useEffect(() => {
         const result = FIRST_REGEX.test(firstName);
-        console.log(result);
-        console.log(firstName);
+        // console.log(result);
+        // console.log(firstName);
         setValidFirstName(result);
     }, [firstName]);
 
     useEffect(() => {
         const result = LAST_REGEX.test(lastName);
-        console.log(result);
-        console.log(lastName);
+        // console.log(result);
+        // console.log(lastName);
         setValidLastName(result);
     }, [lastName]);
     // email checking
     useEffect(() => {
         const result = EMAIL_REGEX.test(email);
-        console.log(result);
-        console.log(email);
+        // console.log(result);
+        // console.log(email);
         setValidEmail(result);
     }, [email]);
 

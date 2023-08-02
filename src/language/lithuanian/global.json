@@ -6,8 +6,13 @@
         "body": "antru ranku parduotuve kompiuteriams ir viskam susijusiam su jais"
     },
 
-    "Login":{
-        "loginButton": "Prisijungti"
+    "navbarButtons":{
+        "loginButton": "Prisijungti",
+        "signUpButton": "Registracija",
+        "myProfileButton": "Paskyra",
+        "logOutButton": "Atsijungti",
+        "newPostButton": "Naujas skelbimas",
+        "filterButton" : "Filtras"
     }
 
 
