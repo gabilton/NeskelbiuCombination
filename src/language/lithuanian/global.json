@@ -112,13 +112,21 @@
         "categoryBName": "Prekes kategorijos šaka: ",
         "defaultChoicePText": "Pasirinkte kategorija",
         "phoneNumber": "Kontaktinis numeris: ",
+        "phoneNumberTitle":"priimami formata: +370XXXXXXXX",
         "city": "Iš kur pardavinėjama prekė: ",
         "otherCity": "Įrašykite vietovę: ",
         "website": "Nuoroda į prekės tinklalapį (jei toks yra):",
         "videoLink": "Nuoroda į vaizdinę medžiagą (jei tokia yra):",
         "imgUploadMessage": "Nuotraukas šiuo metu galima įkelti tik vėliau. Atsiprašome už nesklandumus",
-        "submitButton":"Įkelti skelbimą!"
-
+        "submitButton":"Įkelti skelbimą!",
+        "uploadFailed": "Nepavyko įkelti skelbimo, prašome patikrinti ar visi laukai nurodyti gerai",
+        "ufPostName": "Įrašykite tinkamą skelbimo pavadinimą!", 
+        "ufPostDescription": "Skelbimas privalo turėti bent minimalų apibūdinimą!",
+        "ufPhoneNumber": "telefono numerį pateikite formatu +370XXXXXXXX",
+        "ufCity": "Pasirinkite miestą!",
+        "ufCatA": "Pasirinkite prekės kategorija!",
+        "ufCatB": "Pasirinkite prekės kategorijos šaką!",
+        "ufPrice": "Įveskite tinkamą kainą!"
     }
 
 

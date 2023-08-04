@@ -8,7 +8,7 @@ const FavoritesAndHistoyFrame = () => {
       <img className="favoritesicon" alt="" src="/favoritesicon.svg" />
         </Link>
 
-      <Link className="favoritesbutton" to="/posts">
+      <Link className="favoritesbutton" to="/posters">
         <img className="historyicon" alt="" src="/historyicon.svg" />
       </Link>
 

@@ -8,19 +8,19 @@ import { computerAEnum as catA,
   allArrays,
   cities
 } from './AllEnumArrays';
-import GetPosterInfo from './GetPosterInfo';
+
 
 const PRICE_REGEX = /^[0-9]+$/;
 const CATEGORY_CITY_REGEX = /^[a-zA-Z]+$/;
 const PHONE_REGEX = /^[+]?\d+$/;
-const WEBSITE_REGEX = /\.[a-zA-Z]{2,}/; //NOT SURE IF WORTH IT
+
 
 const CreatePosters = () => {
     const privateAxios = useAxiosPrivate();
     const [t, i18n] = useTranslation("global");
     
     
-    const [catBArray, setCatBArray] = useState([]);
+    
     const [tempLangString, setTempLangString] = useState("");
 
     const {auth} = useAuth();  
@@ -32,29 +32,18 @@ const CreatePosters = () => {
     const [posterDescription, setPosterDescription] = useState("");
     const [priceFront, setPriceFront] = useState('');
     const [price, setPrice] = useState('');
+    const [tempPrice, setTempPrice] = useState('');
     const [categoryA, setCategoryA] = useState('');
+    const [catBArray, setCatBArray] = useState([]);
     const [categoryB, setCategoryB] = useState("");
-    const [status] = useState("ACTIVE");
-
     
     const [phoneNumber, setPhoneNumber] = useState(" ");
-    const [validPhoneNumber, serValidPhoneNumber] = useState(false);
+    const [tempPhoneNumber, setTempPhoneNumber] = useState("");
 
     const [city, setCity] = useState('');
     const [website, setWebsite] = useState('');
     const [videoLink, setVideoLink] = useState('');
-    // const [poster, setPoster] = useState({
-    //   postName: ' ', 
-    //   description: ' ',
-    //   price: ' ',
-    //   categoryA: ' ',
-    //   categoryB: ' ',
-    //   status: ' ',
-    //   phoneNumber: ' ',
-    //   city: ' ',
-    //   website: ' ',
-    //   videoLink: ' '
-    // })
+    
     
     async function handleSubmit(event)  {
       event.preventDefault();
@@ -64,7 +53,7 @@ const CreatePosters = () => {
         price: +price,
         categoryA: categoryA,
         categoryB: categoryB,
-        status: status,
+        status: "ACTIVE",
         phoneNumber: phoneNumber,
         city: city,
         website: website,
@@ -80,7 +69,7 @@ const CreatePosters = () => {
           price: +price, //konvertuoja i skaiciu
           categoryA: categoryA,
           categoryB: categoryB,
-          status: status,
+          status: "ACTIVE",
           phoneNumber: phoneNumber,
           city: city,
           website: website,
@@ -92,6 +81,7 @@ const CreatePosters = () => {
       } catch(err) {
         setRequestError(err.message);
         console.log(requestError);
+        
       }
     }
 
@@ -104,7 +94,7 @@ const CreatePosters = () => {
       setPosterDescription(e.target.value);
     }
     const handlePriceChange = (e) =>{
-      let tempPrice = e.target.value*100
+      setTempPrice(e.target.value*100);
       setPrice(tempPrice);//Kaina saugoma centais, nes backend yra Long
       setPriceFront(e.target.value);
     }
@@ -114,17 +104,19 @@ const CreatePosters = () => {
       let selectKey = catA.indexOf(event.target.value);
       setTempLangString(langFileStrings[selectKey]);
       setCatBArray(allArrays[selectKey]);
-
       setCategoryA(event.target.value);
-      console.log(event.target.value) 
+      // console.log(event.target.value) 
     }
     const handleSelectB = (event) => { //testing using temmporary variable because setCategoryB works slower thus console shows previous meaning of it
-      const i = event.target.value
+      // const i = event.target.value
       setCategoryB(event.target.value);
-      console.log(i);
+      // console.log(i);
     }
     const handlePhoneNumberChange = (e) => {
-      setPhoneNumber(e.target.value);
+      if ( PHONE_REGEX.test(e.target.value) ){
+        setPhoneNumber(e.target.value);
+      } 
+      setTempPhoneNumber(e.target.value);
     }
     const handleSelectCity = (e) => {
       setCity(e.target.value);
@@ -135,13 +127,24 @@ const CreatePosters = () => {
     const handleVideoLinkChange = (e) => {
       setVideoLink(e.target.value);
     }
+    const handleReset = () => {
+      setSuccess(false);
+      setPostName("");
+      setPosterDescription("");
+      setPriceFront("");
+      setCategoryA("");
+      setCategoryB("");
+      setPhoneNumber("");
+      setCity("");
+    }
    
   return (
     <>{ success? (<>
       <div style={{color:'black'}}> 
         <h1>Skelbimas sukurtas sėkmingai!</h1>
         <Link to="/">grįžti namo</Link>
-        <Link to="/">grįžti namo</Link>
+        <br/>
+        <button onClick={handleReset} > kurti nauja skelbima </button>
         
         
 
@@ -185,8 +188,8 @@ const CreatePosters = () => {
         }   
 
         <label>{t("createPosterPage.phoneNumber")}</label>
-        <input type="text" name="phoneNumber" id="phoneNumber" 
-          maxLength={15} value={ phoneNumber } onChange={handlePhoneNumberChange}/>
+        <input title="" type="text" name="phoneNumber" id="phoneNumber" 
+          maxLength={15} value={ tempPhoneNumber } onChange={handlePhoneNumberChange}/>
 
         <label >{t("createPosterPage.city")}</label>
         <select id="city" onChange={handleSelectCity}>
@@ -207,9 +210,26 @@ const CreatePosters = () => {
           maxLength={20} value={videoLink} onChange={handleVideoLinkChange}/>
         <button> {t("createPosterPage.submitButton")} </button>
       </form>
+      {
+        requestError ? 
+        <div style={{color:'red'}}>
+          <alert> 
+          <h1 >{t("createPosterPage.uploadFailed")}</h1>
+          { !postName && <h2> {t("createPosterPage.ufPostName")} </h2>}
+          { !posterDescription && <h2> {t("createPosterPage.ufPostDescription")} </h2>}
+          { !PRICE_REGEX.test(price) && <h2>{t("createPosterPage.ufPrice")}</h2>}
+          { !CATEGORY_CITY_REGEX.test(categoryA) && <h2>{t("createPosterPage.ufCatA")}</h2>}
+          { !CATEGORY_CITY_REGEX.test(categoryB) && <h2>{t("createPosterPage.ufCatB")}</h2>}
+          { !phoneNumber && <h2>{t("createPosterPage.ufPhoneNumber")}</h2>}
+          { !CATEGORY_CITY_REGEX.test(city) && <h2>{t("createPosterPage.ufCity")}</h2> }
+          </alert>
+        </div> : <></>
+      }
     </div>)}
     </>
   )
 }
-
+// const PRICE_REGEX = /^[0-9]+$/;
+// const CATEGORY_CITY_REGEX = /^[a-zA-Z]+$/;
+// const PHONE_REGEX = /^[+]?\d+$/;
 export default CreatePosters;
