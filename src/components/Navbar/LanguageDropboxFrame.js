@@ -1,4 +1,4 @@
-import "./LanguageDropboxFrame.css";
+import "./css/LanguageDropboxFrame.css";
 const LanguageDropboxFrame = ({ onClose }) => {
   return (
     <div className="languagedropboxframe">

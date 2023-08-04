@@ -5,7 +5,7 @@ import FavoritesAndHistoyFrame from "./FavoritesAndHistoyFrame";
 import LoginRegAddFrame from "./LoginRegAddFrame";
 import LanguageButton from "./LanguageButton";
 import HandleChangeLanguage from '../../hooks/HandleChangeLanguage';
-import "./NavBar.css";
+import "./css/NavBar.css";
 const NavBar = () => {
   return (
     <div className="navbar">

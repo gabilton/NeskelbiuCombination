@@ -1,49 +1,67 @@
-import React, { Component, useEffect, useState } from 'react'
-import { Link, withRouter, useParams } from 'react-router-dom';
+import React, { Component, useEffect, useState } from 'react';
+import {Link} from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
-import axios from '../api/axios';
-import { useTranslation } from "react-i18next";
-import cities from './CityArray';
-import computerStuffBCategory from "./computerStuffBCategory";
-import genTechBCategory from './genTechBCategory';
+import useAxiosPrivate from '../hooks/useAxiosPrivate';
+import { useTranslation } from "react-i18next"
+import { computerAEnum as catA,
+  categoryTranslationKeys as langFileStrings,
+  allArrays,
+  cities
+} from './AllEnumArrays';
+import GetPosterInfo from './GetPosterInfo';
+
+const PRICE_REGEX = /^[0-9]+$/;
+const CATEGORY_CITY_REGEX = /^[a-zA-Z]+$/;
+const PHONE_REGEX = /^[+]?\d+$/;
+const WEBSITE_REGEX = /\.[a-zA-Z]{2,}/; //NOT SURE IF WORTH IT
 
 const CreatePosters = () => {
-
+    const privateAxios = useAxiosPrivate();
     const [t, i18n] = useTranslation("global");
     
+    
+    const [catBArray, setCatBArray] = useState([]);
+    const [tempLangString, setTempLangString] = useState("");
+
     const {auth} = useAuth();  
     const createURL="api/v1/poster/"+auth.userId+"/create"; //GALIMAI PERKELTI EDIT FUNKCIONALUMA I KITA FORMA
 
-    const [posterName, setPosterName] = useState("");
+    const [success, setSuccess] = useState(false);
+    const [requestError, setRequestError] = useState("");
+    const [postName, setPostName] = useState("");
     const [posterDescription, setPosterDescription] = useState("");
+    const [priceFront, setPriceFront] = useState('');
     const [price, setPrice] = useState('');
     const [categoryA, setCategoryA] = useState('');
     const [categoryB, setCategoryB] = useState("");
     const [status] = useState("ACTIVE");
-    const [phoneNumber, setPhoneNumber] = useState('');
+
+    
+    const [phoneNumber, setPhoneNumber] = useState(" ");
+    const [validPhoneNumber, serValidPhoneNumber] = useState(false);
+
     const [city, setCity] = useState('');
     const [website, setWebsite] = useState('');
     const [videoLink, setVideoLink] = useState('');
-    const [comment, setComment] = useState('');
-    const [poster, setPoster] = useState({
-      postName: ' ', 
-      description: ' ',
-      price: ' ',
-      categoryA: ' ',
-      categoryB: ' ',
-      status: ' ',
-      phoneNumber: ' ',
-      city: ' ',
-      website: ' ',
-      videoLink: ' '
-    })
+    // const [poster, setPoster] = useState({
+    //   postName: ' ', 
+    //   description: ' ',
+    //   price: ' ',
+    //   categoryA: ' ',
+    //   categoryB: ' ',
+    //   status: ' ',
+    //   phoneNumber: ' ',
+    //   city: ' ',
+    //   website: ' ',
+    //   videoLink: ' '
+    // })
     
     async function handleSubmit(event)  {
       event.preventDefault();
-      const newPoster = {
-        posterName: posterName, 
+      const newPoster = { //created poster to be able to inspect whether all parameters are getting through
+        postName: postName, 
         description: posterDescription,
-        price: price,
+        price: +price,
         categoryA: categoryA,
         categoryB: categoryB,
         status: status,
@@ -53,12 +71,13 @@ const CreatePosters = () => {
         videoLink: videoLink
       }
       console.log(newPoster);
+      console.log(createURL)
       
       try {
-        const response = await axios.post(createURL,{
-          posterName: posterName, 
+        const response = await privateAxios.post(createURL,{
+          postName: postName, 
           description: posterDescription,
-          price: price,
+          price: +price, //konvertuoja i skaiciu
           categoryA: categoryA,
           categoryB: categoryB,
           status: status,
@@ -66,36 +85,43 @@ const CreatePosters = () => {
           city: city,
           website: website,
           videoLink: videoLink
-          }
+        }
         );
-        console.log(response.data)
+        console.log(response.data);
+        setSuccess(true);
       } catch(err) {
-        console.log(err);
+        setRequestError(err.message);
+        console.log(requestError);
       }
-
     }
-
-
-
 
     //================= Setting all inputs and select windows
     const handleNameChange = (event) => {
-      setPosterName(event.target.value);
+      setPostName(event.target.value);
       // postName, setPostName
     }
     const handleDescriptionChange = (e) => {
       setPosterDescription(e.target.value);
     }
     const handlePriceChange = (e) =>{
-      setPrice(e.target.value);
+      let tempPrice = e.target.value*100
+      setPrice(tempPrice);//Kaina saugoma centais, nes backend yra Long
+      setPriceFront(e.target.value);
     }
     
     // ======= event watch makes sure that once the primary category is selected, a selection for secondary will appear
     const handleSelectA = (event) => {
-      setCategoryA(event.target.value) 
+      let selectKey = catA.indexOf(event.target.value);
+      setTempLangString(langFileStrings[selectKey]);
+      setCatBArray(allArrays[selectKey]);
+
+      setCategoryA(event.target.value);
+      console.log(event.target.value) 
     }
-    const handleSelectB = (event) => {
-      setCategoryB(event.target.value)
+    const handleSelectB = (event) => { //testing using temmporary variable because setCategoryB works slower thus console shows previous meaning of it
+      const i = event.target.value
+      setCategoryB(event.target.value);
+      console.log(i);
     }
     const handlePhoneNumberChange = (e) => {
       setPhoneNumber(e.target.value);
@@ -109,85 +135,69 @@ const CreatePosters = () => {
     const handleVideoLinkChange = (e) => {
       setVideoLink(e.target.value);
     }
-    const handleCommentChange = (e) => {
-      setComment(e.target.value);
-    }
-
+   
   return (
+    <>{ success? (<>
+      <div style={{color:'black'}}> 
+        <h1>Skelbimas sukurtas sėkmingai!</h1>
+        <Link to="/">grįžti namo</Link>
+        <Link to="/">grįžti namo</Link>
+        
+        
+
+      </div>
+    </>) : (
     <div style={{color:'black'}}>
       <h2> {t("createPosterPage.addNewPoster")}</h2>
       <form onSubmit={handleSubmit}>
         <label >{t("createPosterPage.posterTitle")}</label>
-        <input type="text" name="posterName" id="posterName" value={posterName} onChange={handleNameChange}/>
+        <input type="text" name="posterName" id="posterName" value={postName} onChange={handleNameChange}/>
 
         <label >{t("createPosterPage.posterDescription")}</label>
         <input type="textbox" name="posterDescription" id="posterDescription"
             maxLength={100} value={posterDescription} onChange={handleDescriptionChange}/>
 
         <label >{t("createPosterPage.posterPrice")}</label>
-        <input type="number" name="price" id="price" step="0.01"
-             value={price} onChange={handlePriceChange}/>
-
+        <input type="number" name="price" id="price" step="0.01" min="0"
+             value={priceFront} onChange={handlePriceChange}/>
+{/* ==========================================================SELECT FORM AUTOMATION BEGINING=================================== */}
         <label >{t("createPosterPage.categoryAName")}</label>
         <select id="categoryA" onChange={handleSelectA}>
-          <option value=""> --- </option>
-          <option value="kompiuterija"> {t("categoryA.computerStuff")} </option>
-          <option value="Technika"> {t("categoryA.genericTechnologies")} </option>
+          { catA.map((category, index) => {
+            return(
+              <option value={category} key={index}> {t("computerCategoryA."+ index)} </option>
+            );
+          })}
         </select>
     {/* =====================================Kompiuterija is mazosios, technika is didziosios DELETE ME */}
     {/* According to what was selected for primary category, secondary category options are automatically loaded */}
-        { categoryA === "kompiuterija" ? (
+        { !tempLangString ? <p>{t("createPosterPage.defaultChoicePText")}</p>:
           <>
-            <label >{t("createPosterPage.categoryBName")}</label>
-            <select id="categoryB" onChange={handleSelectB}>
-              { computerStuffBCategory.map( ( categoryB, index) => {
-                return (
-                  <>
-                  <option value={computerStuffBCategory[categoryB]} key={index}> {t("computerCategoryB."+ index)} </option>
-                  {/* {console.log(index)} */}
-                  </>
-                );
-              })}
-            </select>
+          <label >{t("createPosterPage.categoryBName")}</label>
+          <select id="categoryB" onChange={handleSelectB}>
+            { catBArray.map( ( categoryB, index) => {
+              return (              
+                <option value={categoryB} key={index}>  {t( tempLangString+"."+ index)} </option>                 
+              );
+            })}
+          </select>
           </>
-        ) : ( categoryA !== "Technika" ? (<><p>{t("createPosterPage.defaultChoicePText")}</p></>) : (
-          <>
-            <label >{t("createPosterPage.categoryBName")}</label>
-            <select id="categoryB" onChange={handleSelectB}>
-              { genTechBCategory.map( ( categoryB, index) => {
-                return (
-                  <>
-                  <option value={genTechBCategory[categoryB]} key={index}> {t("genTechCategoryB."+ index)} </option>
-                  {/* {console.log(index)} */}
-                  </>
-                );
-              })}
-            </select>
-          </>
-        ))}
+        }   
 
         <label>{t("createPosterPage.phoneNumber")}</label>
-        <input type="text" name="phoneNumber" id="phoneNumber"
-          maxLength={15} value={phoneNumber} onChange={handlePhoneNumberChange}/>
+        <input type="text" name="phoneNumber" id="phoneNumber" 
+          maxLength={15} value={ phoneNumber } onChange={handlePhoneNumberChange}/>
 
         <label >{t("createPosterPage.city")}</label>
         <select id="city" onChange={handleSelectCity}>
           { cities.map( ( city, index) => {
             return(
-              <>
-              <option value={city[index]} key={index}> {cities[index]} </option>
-              {/* {console.log(index)} */}
-              </>
+              <option value={city} key={index}> {city} </option>
             );
           })}
         </select>
-        { city === "Kita" ? 
-          <>
-            <label>{t("createPosterPage.otherCity")}</label>
-            <input type="text" name="comment" id="comment"
-              maxLength={20} value={comment} onChange={handleCommentChange}/>
-          </> : <></>}
-{/* =========================================TODO prie interneto svetaines galima butu prideti patikrinima ar yra . ir po jo pora raidziu or smth */}
+  
+{/* ==============TODO prie interneto svetaines galima butu prideti patikrinima ar yra . ir po jo pora raidziu or smth */}
         <label>{t("createPosterPage.website")}</label>
         <input type="text" name="website" id="website"
           maxLength={20} value={website} onChange={handleWebsiteChange}/>
@@ -197,7 +207,8 @@ const CreatePosters = () => {
           maxLength={20} value={videoLink} onChange={handleVideoLinkChange}/>
         <button> {t("createPosterPage.submitButton")} </button>
       </form>
-    </div>
+    </div>)}
+    </>
   )
 }
 

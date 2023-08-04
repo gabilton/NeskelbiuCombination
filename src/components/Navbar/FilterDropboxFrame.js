@@ -1,4 +1,4 @@
-import "./FilterDropboxFrame.css";
+import "./css/FilterDropboxFrame.css";
 const FilterDropboxFrame = ({ onClose }) => {
   return (
     <div className="filterdropboxframe">

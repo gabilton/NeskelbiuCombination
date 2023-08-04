@@ -1,7 +1,7 @@
 import { useState, useCallback, useTransition } from "react";
 import LoginFrame from "./LoginFrame";
 import PortalPopup from "./PortalPopup";
-import "./LoginRegAddFrame.css";
+import "./css/LoginRegAddFrame.css";
 import { Link } from 'react-router-dom';
 import  useAuth  from '../../hooks/useAuth';
 import { useTranslation } from "react-i18next";

@@ -1,7 +1,7 @@
 import { useState, useRef, useCallback } from "react";
 import FilterDropboxFrame from "./FilterDropboxFrame";
 import PortalPopup from "./PortalPopup";
-import "./Search.css";
+import "./css/Search.css";
 import { useTranslation } from "react-i18next";
 
 const Search = () => {

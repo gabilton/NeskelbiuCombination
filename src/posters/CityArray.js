@@ -61,7 +61,6 @@ const cities = [
     "Varėnos Rajonas",
     "Vilkaviškio Rajonas",
     "Vilniaus Rajonas",
-    "Zarasų Rajonas",
-    "Kita",
+    "Zarasų Rajonas"
   ];
  export default cities;  

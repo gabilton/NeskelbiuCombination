@@ -104,6 +104,7 @@ function Register() {
             return;
         }
         try {
+            console.log(REGISTER_URL)
             const response = await axios.post(REGISTER_URL, {
                 username: user,
                 password: pwd,

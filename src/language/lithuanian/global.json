@@ -14,43 +14,107 @@
         "newPostButton": "Naujas skelbimas",
         "filterButton" : "Filtras"
     },
-    "categoryA":{
-        "computerStuff":"Kompiuterija",
-        "genericTechnologies": "Technika"
+    "computerCategoryA":{
+        "0":"---",
+        "1": "Kompiuteriai",
+        "2": "Išoriniai įrenginiai",
+        "3": "Kompiuterių komponentai",
+        "4": "priedai, aksesuarai",
+        "5": "Programinė įranga, žaidimai",
+        "6": "Tinklo įranga",
+        "7": "Paslaugos, remontas",
+        "8": "Konsolės"
     },
-    "computerCategoryB":{
-        "0": "Kompiuteriai",
-        "1": "Išoriniai įrenginiai",
-        "2": "Kompiuterių komponentai",
-        "3": "priedai, aksesuarai",
-        "4": "Programinė įranga, žaidimai",
-        "5": "Tinklo įranga",
-        "6": "Paslaugos, remontas",
+    "computerCategoryB": {
+        "0": "---",
+        "1": "Nešiojami kompiuteriai",
+        "2": "Stacionarūs kompiuteriai",
+        "3": "Serveriai",
+        "4": "Planšetiniai kompiuteriai",
+        "5": "Žaidimų kompiuteriai",
+        "6": "Elektroninės skaityklės",
+        "7": "Kompiuteriai kita"
+    },
+    "externalDevCategoryB": {
+        "0": "---",
+        "1": "Monitoriai",
+        "2": "Projektorių skeneriai spausdintuvai",
+        "3": "Ausinės garso kolonėlės",
+        "4": "Daugiafunkciniai įrenginiai",
+        "5": "Klaviatūros, pelės, web kameros",
+        "6": "Žaidimų priedai",
+        "7": "Išoriniai įrenginiai (kita)"
+    },
+
+    "computerComponentCategoryB": {
+        "0": "---",
+        "1": "Nešiojamiems kompiuteriams",
+        "2": "Stacionariems kompiuteriams",
+        "3": "Kompiuterių komponentai (kita)"
+    },
+    "accessoriesCategoryB": {
+        "0": "---",
+        "1": "Įkrovikliai, baterijos, akumuliatoriai",
+        "2": "Adapteriai, kabeliai, jungtys",
+        "3": "Atminties kortelės, USB atmintinės",
+        "4": "HDD dėžutės ir išoriniai HDD",
+        "5": "Krepšiai kompiuteriams",
+        "6": "UPS",
+        "7": "Priedai, aksesuarai (kita)"
+    },
+
+    "softwareAndGamesCategoryB": {
+        "0": "---",
+        "1": "Kompiuteriniai žaidimai",
+        "2": "Apple programinė įranga",
+        "3": "Biuro programinė įranga",
+        "4": "Mokomosios programos",
+        "5": "Operacinės sistemos",
+        "6": "Techninė programinė įranga",
+        "7": "Programinė įranga, žaidimai (kita)"
+    },
+    "networkStuffCategoryB": {
+        "0": "---",
+        "1": "Belaidžio tinklo įranga",
+        "2": "Hub'as",
+        "3": "Maršrutizatoriai",
+        "4": "Modemai",
+        "5": "Switch'as",
+        "6": "Aksesuarai, kabeliai",
+        "7": "Tinklo įranga (kita)"
+    },
+    "technicalServicesCategoryB": {
+        "0": "---",
+        "1": "3D spausdinimas",
+        "2": "Remontas",
+        "3": "Spausdinimas, kopijavimas",
+        "4": "Supirkimas",
+        "5": "Paslaugos, remontas (kita)"
+    },
+    "consolesCategoryB": {
+        "0": "---",
+        "1": "Sony",
+        "2": "Microsoft",
+        "3": "Nintendo",
+        "4": "Sega",
+        "5": "Priedai, dalys",
+        "6": "Paslaugos",
         "7": "Kita"
     },
-    "genTechCategoryB":{
-        "0": "Garso įranga",
-        "1": "Video įranga",
-        "2": "Foto, optinė įranga",
-        "3": "Buitine technika",
-        "4": "Biuro, prekybinė technika",
-        "5": "Sodui, daržui, miškui",
-        "6": "Pramoninė tecnhika",
-        "7": "Paslaugos, remontas",
-        "8": "Kita"
-    },
+    
+
     "createPosterPage":{
         "addNewPoster": "Prideti naują skelbimą",
         "posterTitle": "Skelbimo pavadinimas:",
-        "posterDescription": "Prekės/paslaugos apibūdinimas",
+        "posterDescription": "Prekės/paslaugos aprašymas",
         "posterPrice":"Įrašykite prekės kainą (eur): ",
-        "categoryAName":"Pirmine prekes kategorija",
-        "categoryBName": "Antrine prekes kategorija",
+        "categoryAName":"Pasirinkite prekes kategoriją: ",
+        "categoryBName": "Prekes kategorijos šaka: ",
         "defaultChoicePText": "Pasirinkte kategorija",
         "phoneNumber": "Kontaktinis numeris: ",
         "city": "Iš kur pardavinėjama prekė: ",
         "otherCity": "Įrašykite vietovę: ",
-        "website": "Internetinė nuoroda į prekės tinklalapį (jei toks yra):",
+        "website": "Nuoroda į prekės tinklalapį (jei toks yra):",
         "videoLink": "Nuoroda į vaizdinę medžiagą (jei tokia yra):",
         "imgUploadMessage": "Nuotraukas šiuo metu galima įkelti tik vėliau. Atsiprašome už nesklandumus",
         "submitButton":"Įkelti skelbimą!"

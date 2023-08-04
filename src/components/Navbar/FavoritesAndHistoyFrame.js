@@ -1,4 +1,4 @@
-import "./FavoritesAndHistoyFrame.css";
+import "./css/FavoritesAndHistoyFrame.css";
 import { Link } from 'react-router-dom';
 const FavoritesAndHistoyFrame = () => {
   return (

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import "./DrawerMenu.css";
+import "./css/DrawerMenu.css";
 const DrawerMenu = ({ onClose }) => {
   useEffect(() => {
     const scrollAnimElements = document.querySelectorAll(
